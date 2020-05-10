@@ -7,9 +7,10 @@ $.getJSON(weatherAPI, function(data) {
 
     const iconID = data.weather[0].icon;
     const icon = `http://openweathermap.org/img/wn/${iconID}@2x.png`;
-    const temperature = data.main.temp;
-
+    const temperature = Math.floor(data.main.temp);
+    const weather = data.weather[0].main;
 
     $('.icon').attr('src', icon);
     $('.temperature').append(temperature);
+    $('.weather').append(weather);
 });
