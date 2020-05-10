@@ -8,5 +8,5 @@ $.getJSON(weatherAPI, function(data) {
     const iconID = data.weather[0].icon;
     const icon = `http://openweathermap.org/img/wn/${iconID}@2x.png`;
 
-    console.log(icon);
+    $('.icon').attr('src', icon);
 });
